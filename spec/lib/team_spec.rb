@@ -7,6 +7,11 @@ describe Team do
         team = Team.new(3)
         expect(team.num_people).to eq 3
       end
+      it "sets the total markup" do
+        stub_const("Team::MARKUP_PER_PERSON", 1.2)
+        team = Team.new(3)
+        expect(team.markup).to be_within(0.0001).of(3.6)
+      end
     end
 
     context "when the number of people specified is not greater than 0" do
