@@ -1,7 +1,7 @@
 class Package
   FOOD_MARKUP = 0.13
   DRUGS_MARKUP = 0.075
-  ELECTRONICS_MARKUP = 0.2
+  ELECTRONICS_MARKUP = 0.02
 
   attr_reader :type
   attr_reader :markup

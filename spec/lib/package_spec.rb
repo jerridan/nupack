@@ -30,9 +30,9 @@ describe Package do
         end
         context "package contains electronics" do
           it "sets the appropriate electronics markup" do
-            stub_const("Package::ELECTRONICS_MARKUP", 0.2)
+            stub_const("Package::ELECTRONICS_MARKUP", 0.02)
             package = Package.new("electronics")
-            expect(package.markup).to eq 0.2
+            expect(package.markup).to eq 0.02
           end
         end
       end
