@@ -49,6 +49,7 @@ describe NuPack do
         end
         it "calculates the final price after markup with a package of drugs" do
           stub_const("Team::MARKUP_PER_PERSON", 0.012)
+          stub_const("Project::DRUGS_MARKUP", 0.075)
           stub_const("NuPack::FLAT_MARKUP", 0.05)
 
           base_price = 5432.00
@@ -82,6 +83,18 @@ describe NuPack do
 
           price = @nupack.calc_price(base_price, team, package)
           expect(price).to be_within(0.01).of(1591.58)
+        end
+        it "calculates the final price after markup with package of electronics" do
+          stub_const("Team::MARKUP_PER_PERSON", 0.012)
+          stub_const("Project::ELECTRONICS_MARKUP", 0.02)
+          stub_const("NuPack::FLAT_MARKUP", 0.05)
+
+          base_price = 1299.99
+          team = Team.new(3)
+          package = Package.new("electronics")
+
+          price = @nupack.calc_price(base_price, team, package)
+          expect(price).to be_within(0.01).of(1441.43)
         end
       end
     end
