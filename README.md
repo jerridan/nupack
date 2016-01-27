@@ -1,6 +1,8 @@
-# NuPack
+## NuPack
 
-## To run tests
-Install RSpec: `gem install rspec`
+### Build Instructions
+Install Bundler (if not already installed): `gem install bundle`
+Build NuPack: `bundle install`
 
-Run all tests from root: `rspec spec`
+### Running Tests
+Run all tests: `rspec`
