@@ -1,5 +1,5 @@
 class Team
-  MARKUP_PER_PERSON = 1.2
+  MARKUP_PER_PERSON = 0.012
 
   attr_reader :num_people
   attr_reader :markup

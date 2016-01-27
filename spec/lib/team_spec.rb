@@ -8,9 +8,9 @@ describe Team do
         expect(team.num_people).to eq 3
       end
       it "sets the total markup" do
-        stub_const("Team::MARKUP_PER_PERSON", 1.2)
+        stub_const("Team::MARKUP_PER_PERSON", 0.012)
         team = Team.new(3)
-        expect(team.markup).to be_within(0.0001).of(3.6)
+        expect(team.markup).to be_within(0.00001).of(0.036)
       end
     end
 
